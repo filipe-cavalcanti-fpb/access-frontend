@@ -1,0 +1,10 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      Cadastrar Salas
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <app-form-room [action]="registerAction" [roomDTO]="null" [typesRomm]="null" (roomEmitter)="register($event)"></app-form-room>
+  </mat-card-content>
+</mat-card>
