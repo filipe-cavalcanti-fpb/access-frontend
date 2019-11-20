@@ -1,10 +1,16 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>
-      Cadastrar Salas
-    </mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <app-form-room [action]="registerAction" [roomDTO]="null" [typesRomm]="null" (roomEmitter)="register($event)"></app-form-room>
-  </mat-card-content>
-</mat-card>
+<div class="container-fluid pt-5 pb-5">
+  <div class="row">
+    <div class="col-lg-12">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>
+            Cadastrar Salas
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <app-form-room *ngIf="typesRoom" (roomEmitter)="register($event)" [action]="registerAction" [typesRomm]="typesRoom"></app-form-room>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

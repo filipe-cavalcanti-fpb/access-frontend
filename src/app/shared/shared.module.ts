@@ -42,6 +42,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatFormFieldModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   exports: [
@@ -89,6 +90,7 @@ import {FormsModule} from '@angular/forms';
     ScrollingModule,
     MatFormFieldModule,
     FormsModule,
+    HttpClientModule,
   ]
 })
 export class SharedModule {
