@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AuthService} from '../services/auth.service';
+import {SignInDTO} from '../models/sign-in.DTO';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   public loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private authService: AuthService) { }
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -20,6 +22,9 @@ export class LoginComponent implements OnInit {
   }
 
   public login() {
-
+    const form  = this.loginForm.getRawValue();
+    this.authService.login(form).subscribe(token => {
+      console.log(token);
+    }, error => console.log(error));
   }
 }
